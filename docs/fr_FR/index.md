@@ -10,6 +10,7 @@ Les modules gérés sont :
 * **Heatzy**
 * **Flam/Plugzy**
 * **INEA**
+* **GLOW**
 * **Pilote seconde génération**
 * **Pilote SoC**
 * **Elec Pro (Acova version)**

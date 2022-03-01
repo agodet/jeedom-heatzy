@@ -712,7 +712,9 @@ class heatzy extends eqLogic {
             if (isset ($aProductInfo['product_key']))
 		        		$eqLogic->setConfiguration('product_key',$aProductInfo['product_key']);
 
-            if  ( strcmp( $aProductInfo['name'] , "INEA" ) === 0 )
+            if  ( strcmp( $aProductInfo['name'] , "Glow_Simple" ) === 0 )
+                 $eqLogic->setConfiguration('heatzytype','flam');
+            else if  ( strcmp( $aProductInfo['name'] , "INEA" ) === 0 )
                  $eqLogic->setConfiguration('heatzytype','flam');
 	        else if ( strncmp ( $aProductInfo['name'] , "Flam" , 4 ) === 0 )
                  $eqLogic->setConfiguration('heatzytype','flam');
@@ -1204,7 +1206,8 @@ class heatzy extends eqLogic {
           }
         
         if( $this->getConfiguration('product', '') == 'Flam_Week2' ||
-            $this->getConfiguration('product', '') == 'INEA') {    /// Pour heatzy flam ou inea
+            $this->getConfiguration('product', '') == 'INEA' ||
+            $this->getConfiguration('product', '') == 'Glow_Simple') {    /// Pour heatzy flam ou inea ou glow
           
           /// Creation de la commande info de la temperature de confort
           $CftTemp = $this->getCmd(null, 'cft_temp'); 
@@ -1328,7 +1331,8 @@ class heatzy extends eqLogic {
         $replace['#cmd_progon_id#'] = (is_object($ProgOn)) ? $ProgOn->getId() : '';
       
         if( $product == 'Flam_Week2' 
-         || $product == 'INEA') {     /// Pour heatzy flam ou inea mais par defaut le pilote
+         || $product == 'INEA' 
+         || $product == 'Glow_Simple' ) {     /// Pour heatzy flam ou inea ou glow mais par defaut le pilote
 
             if($product == 'Flam_Week2') {
 	            $plugzy = $this->getCmd(null,'plugzy');

@@ -44,7 +44,7 @@ foreach ($eqLogics as $eqLogic) {
 	$opacity = ($eqLogic->getIsEnable()) ? '' : jeedom::getConfiguration('eqLogic:style:noactive');
 	echo '<div class="eqLogicDisplayCard cursor" data-eqLogic_id="' . $eqLogic->getId() . '" style="background-color : #ffffff; height : 200px;margin-bottom : 10px;padding : 5px;border-radius: 2px;width : 160px;margin-left : 10px;' . $opacity . '" >';
 	echo "<center>";
-    if($eqLogic->getConfiguration('product', '')=='Flam_Week2') 	        /// Pour heatzy INEA
+    if($eqLogic->getConfiguration('product', '')=='Flam_Week2') 	        /// Pour heatzy INEA ou GLOW
     	echo '<img src="plugins/heatzy/docs/images/LOGO_FLAM.png"  width="100" height="100"/>';
     else
         echo '<img src="plugins/heatzy/docs/images/LOGO_PILOTE.png" width="100" height="100"/>';
